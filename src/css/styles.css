@@ -86,6 +86,12 @@ a{
     align-items: center;
     margin-left: 50px;
     text-decoration: underline;
+    cursor: pointer;
+}
+
+.changeLink:hover{
+    color: mediumpurple;
+    text-decoration: none;
 }
 
 .paymentButton{
@@ -96,8 +102,19 @@ a{
     border: none;
     border-radius: 10px;
     padding: 15px 0;
+    cursor: pointer;
+    box-shadow: 0 20px 10px #9370DB33;
+}
+
+.paymentButton:hover{
+    background: mediumpurple;
 }
 
 .cancelLink{
     color: grey;
+    cursor: pointer;
+}
+
+.cancelLink:hover{
+    color: black;
 }
