@@ -1,0 +1,163 @@
+*, *::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Red Hat Display', sans-serif;
+    --desktop-width: 1440px;
+    --mobile-width: 375px;
+    --clr-primary-pale-blue: hsl(225, 100%, 94%);
+    --clr-primary-bright-blue: hsl(245, 75%,  52%);
+    --clr-neutral-very-pale-blue: hsl(225, 100%, 98%);
+    --clr-neutral-desaturated-blue: hsl(224, 23%, 55%);
+    --clr-neutral-dark-blue: hsl(223, 47%, 23%);
+    --font-size: 16px;
+}
+
+a{
+    color: hsl(228, 45%, 44%);
+    font-weight: bold;
+}
+
+.grid{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    width: var(--desktop-width);
+    height: 90%;
+    background-image: url("../images/pattern-background-desktop.svg");
+    background-repeat: no-repeat;
+    background-color: var(--clr-primary-pale-blue);
+}
+
+.card{
+    width: 450px;
+    height: 660px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 50px;
+}
+
+.card > *{
+    flex-shrink: 1;
+}
+
+.description{
+    width: 339.4px;
+    text-align: center;
+    color: grey;
+}
+
+.pricingInfo{
+    display: grid;
+    grid-template-areas:
+            "icon caption changeLink"
+            "icon price changeLink";
+    background: var(--clr-neutral-very-pale-blue);
+    padding: 20px;
+    column-gap: 20px;
+    border-radius: 10px;
+}
+
+.musicIcon{
+    grid-area: icon;
+}
+
+.pricingInfoTitle{
+    grid-area: caption;
+}
+
+.price{
+    grid-area: price;
+    color: grey;
+}
+
+.changeLink{
+    grid-area: changeLink;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin-left: 50px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.changeLink:active{
+    color: mediumpurple;
+    text-decoration: none;
+}
+
+.paymentButton{
+    width: 339.4px;
+    background: var(--clr-primary-bright-blue);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 0;
+    cursor: pointer;
+    box-shadow: 0 20px 10px #9370DB33;
+}
+
+.paymentButton:active{
+    background: mediumpurple;
+}
+
+.cancelLink{
+    color: grey;
+    cursor: pointer;
+}
+
+.cancelLink:active{
+    color: black;
+}
+
+@media only screen and (max-width: 600px) {
+    .grid{
+        background-image: url("../images/pattern-background-mobile.svg");
+        width: var(--mobile-width);
+        height: 740px;
+    }
+
+    .card{
+        padding-bottom: 30px;
+        height: 590px;
+    }
+
+    .description{
+        width: 275px;
+    }
+
+    .pricingInfo{
+        width: 275px;
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    .changeLink{
+        margin-left: auto;
+    }
+
+    .card{
+        width: 325px;
+    }
+
+    .heroImage{
+        width: 325px;
+    }
+
+    .paymentButton{
+        width: 275px;
+    }
+}
