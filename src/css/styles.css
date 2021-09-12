@@ -45,8 +45,12 @@ a{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    gap: 30px;
     padding-bottom: 50px;
+}
+
+.card > *{
+    flex-shrink: 1;
 }
 
 .description{
@@ -89,7 +93,7 @@ a{
     cursor: pointer;
 }
 
-.changeLink:hover{
+.changeLink:active{
     color: mediumpurple;
     text-decoration: none;
 }
@@ -106,7 +110,7 @@ a{
     box-shadow: 0 20px 10px #9370DB33;
 }
 
-.paymentButton:hover{
+.paymentButton:active{
     background: mediumpurple;
 }
 
@@ -115,6 +119,45 @@ a{
     cursor: pointer;
 }
 
-.cancelLink:hover{
+.cancelLink:active{
     color: black;
+}
+
+@media only screen and (max-width: 600px) {
+    .grid{
+        background-image: url("../images/pattern-background-mobile.svg");
+        width: var(--mobile-width);
+        height: 740px;
+    }
+
+    .card{
+        padding-bottom: 30px;
+        height: 590px;
+    }
+
+    .description{
+        width: 275px;
+    }
+
+    .pricingInfo{
+        width: 275px;
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    .changeLink{
+        margin-left: auto;
+    }
+
+    .card{
+        width: 325px;
+    }
+
+    .heroImage{
+        width: 325px;
+    }
+
+    .paymentButton{
+        width: 275px;
+    }
 }
